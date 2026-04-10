@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 
-const API = "http://localhost:8500/api/products";
+const API = "https://productmanager-7ge5.onrender.com/api/products";
 
 function App() {
   const [products, setProducts] = useState([]);
