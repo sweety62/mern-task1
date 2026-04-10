@@ -94,7 +94,7 @@ function App() {
         </div>
         <span className="topbar-meta">
           <span className="dot-status" />
-          API CONNECTED · localhost:5000
+          API CONNECTED · OK
         </span>
       </div>
 
