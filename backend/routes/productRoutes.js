@@ -1,5 +1,5 @@
 import express from "express";
-import ProductRoutes from "../models/ProductRoutes.js";   
+import Product from "../models/product.js";   
 
 const router = express.Router();
 
@@ -19,6 +19,24 @@ router.post("/", async (req, res) => {
     const product = new Product(req.body);   
     const saved = await product.save();
     res.status(201).json(saved);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+router.update("/:id", async (req, res) => {
+  try {
+    const updated = await Product.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    res.json(updated);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+router.delete("/:id", async (req, res) => {
+  try {
+    await Product.findByIdAndDelete(req.params.id);
+    res.json({ message: "Product deleted" });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }

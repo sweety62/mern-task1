@@ -4,11 +4,16 @@ import cors from "cors";
 import dotenv from "dotenv";
 import productRoutes from "./routes/productRoutes.js";
 
+
 dotenv.config();
 
 const app = express();
+app.use(cors({
+  allowedOrigins: "*"
+}));
 
-app.use(cors());
+
+//app.use(cors());
 app.use(express.json());
 
 // Routes
