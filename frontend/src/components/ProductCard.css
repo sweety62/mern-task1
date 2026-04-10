@@ -1,13 +1,63 @@
 .card {
-  width: 200px;
-  padding: 15px;
-  margin: 10px;
-  border-radius: 10px;
-  box-shadow: 2px 2px 10px gray;
-  background: white;
+  background: linear-gradient(145deg, #f8f9ff, #ffffff);
+  border: 2px solid #e8e8f8;
+  border-radius: 14px;
+  padding: 1.4rem 1.2rem;
   text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.card h2 {
-  color: darkblue;
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(102, 126, 234, 0.2);
+}
+
+.card-icon {
+  font-size: 2rem;
+}
+
+.card-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2d2d6b;
+  margin: 0;
+}
+
+.card-price {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #667eea;
+  margin: 0;
+}
+
+.card-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.card-btn {
+  flex: 1;
+  padding: 0.45rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+}
+
+.card-btn:hover { opacity: 0.85; transform: scale(1.03); }
+
+.card-btn.edit {
+  background: #eef2ff;
+  color: #4338ca;
+}
+
+.card-btn.delete {
+  background: #fff0f0;
+  color: #dc2626;
 }
